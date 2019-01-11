@@ -16,7 +16,8 @@ namespace Strategy
                               "0 Exit \n" +
                               "1 First come first serve \n" +
                               "2 Shortest seek time first \n" +
-                              "3 Add Process ");
+                              "3 Add Process \n" +
+                              "4 Randomly");
 
                 string input = Console.ReadLine();
 
@@ -40,6 +41,9 @@ namespace Strategy
                         {
                             element.Info();
                         }
+                        break;
+                    case "4":
+                        DiskMS.Start(new ShortestSeekTimeFirst(), dp);
                         break;
                     default:
                         Console.WriteLine("Default case");
